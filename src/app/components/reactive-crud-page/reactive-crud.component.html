@@ -1,0 +1,64 @@
+<div class="reactive-page-container medium-text">
+    <div class="d-flex justify-center align-items-center title">
+      <div>
+        <div class="large-italic-text">List of dreams</div>
+        <div class="small-text">
+          <strong><i>Click on row for further actions.</i></strong>
+        </div>
+      </div>
+      <button 
+        type="button" 
+        (click)="addDream()"
+      >
+        ADD DREAM
+      </button>
+    </div>
+    <span 
+    *ngIf="!(dreams$ | async)"
+    class="small-text blink"
+    >
+      <i>Loading...</i>
+    </span>
+    <div 
+      *ngFor="let item of dreams$ | async" 
+      #itemSelectionRow 
+      highlighted
+      [rowId]="item.id"
+      [ngClass]="{'item-section': true, 'selected-row': item.id === (isSelectedRowId$ | async) }"
+      (rowClicked)="onRowSelected($event)"
+    >
+      <span class="inner-left-item-section">
+        <label for="dreamName">
+          <span #dreamName>
+            <span>Name: </span><strong>{{item?.name}}</strong>
+          </span>
+        </label>
+        <label for="dreamDescription">
+          <span #dreamDescription>
+            <span>Description: </span>{{item?.description}}
+          </span>
+        </label>
+        <label for="dreamRating">
+          <span #dreamRating>
+            <span>Rating: </span>{{item?.rating}}
+          </span>
+        </label>
+      </span>
+      <span 
+        *ngIf="item.id === (isSelectedRowId$ | async)"
+        class="inner-right-item-section">
+        <button 
+          type="button" 
+          (click)="navigateToEditDreamPage(item.id)"
+        >
+          EDIT
+        </button>
+        <button 
+          type="button"
+          (click)="deleteDream(item.id)"
+        >
+          DELETE
+        </button>
+      </span>
+    </div>
+</div>

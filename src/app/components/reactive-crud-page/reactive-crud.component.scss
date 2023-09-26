@@ -1,0 +1,59 @@
+.reactive-page-container {
+    width: 50%;
+    padding: 1rem 25%;
+
+    .selected-row {
+      background: #2d5282;
+    }
+
+    .title {
+      padding: 5rem 0 3rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .blink {
+      animation: blinker 1s step-start infinite;
+    }
+    
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .item-section {
+      border-bottom: 0.1742rem solid whitesmoke;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin: 0.7143rem 0 0;
+
+      .inner-left-item-section {
+        label {
+          display: block;
+    
+          span span{
+            display: inline-block;
+            width: 8rem;
+          }
+        }
+      }
+  
+      .inner-right-item-section {
+        display: inherit;
+        align-items: center;
+
+        button:nth-of-type(1) {
+          outline: whitesmoke solid 1px;
+          background-color: inherit;
+        }
+
+        button:nth-of-type(2) {
+          outline: rgb(255, 134, 47) solid 1px;
+          background-color: inherit;
+          margin: 0 0 0 1rem;
+        }
+      }
+    }
+}

@@ -1,0 +1,53 @@
+<div class="edit-form-container d-flex flex-column justify-center">
+  <p class="large-italic-text">Just for fun</p>
+  <p>I have added a CanDeactivate guard on this page.</p>
+  <div class="add-dream-section">
+    <form 
+      [formGroup]="addDreamForm"
+      class="d-flex flex-column p-1"
+      (ngSubmit)="onSubmitAddDreamForm()"
+    >
+      <h3>ADD DREAM</h3>
+      <label for="nameInput">
+        <span>Name: </span>
+        <input 
+          formControlName="nameInput" 
+          #nameInput
+          [ngClass]="{'red-outline': addDreamForm.controls['nameInput'].invalid && addDreamForm.controls['nameInput'].touched}"
+        />
+      </label>
+      <label for="descriptionInput">
+        <span>
+          Description:
+        </span>
+        <input 
+          formControlName="descriptionInput" 
+          #descriptionInput 
+          [ngClass]="{'red-outline': addDreamForm.controls['descriptionInput'].invalid && addDreamForm.controls['descriptionInput'].touched}"
+        />
+      </label>
+      <label for="ratingInput">
+        <span>Rating: </span>
+        <input 
+          formControlName="ratingInput" 
+          #ratingInput
+          [ngClass]="{'red-outline': addDreamForm.controls['ratingInput'].invalid && addDreamForm.controls['ratingInput'].touched}"
+        />
+      </label>
+      <div class="btns-section">
+        <button 
+          type="button"
+          (click)="onCancel()"
+        >
+          CANCEL
+        </button>
+        <button 
+          type="submit" 
+          [disabled]="addDreamForm.invalid"
+        >
+          SAVE
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

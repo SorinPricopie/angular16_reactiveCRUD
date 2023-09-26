@@ -1,0 +1,44 @@
+<div class="p-1 d-flex flex-column align-items-center auth-page-container">
+  <p class="large-italic-text">Just for fun</p>
+  <p>I have added a CanActivate guard on Reactive CRUD page.</p>
+  <p>Username & password: 1234</p>
+  <p>You may try to use different user / password to see error message.</p>
+  <div class="login-section p-1">
+    <form 
+      [formGroup]="loginForm"
+      class="d-flex align-items-center"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="d-flex flex-column">
+        <label for="usernameInput">
+          <span>Username:</span>
+          <input 
+            formControlName="usernameInput" 
+            #usernameInput
+            [ngClass]="{'red-outline': loginForm.controls['usernameInput'].invalid}"
+          />
+        </label>
+        <label for="pwdInput">
+          <span>Password:</span>
+          <input 
+            formControlName="pwdInput" 
+            #pwdInput
+            [ngClass]="{'red-outline': loginForm.controls['pwdInput'].invalid}"
+          />
+        </label>
+        <div 
+          *ngIf="submited && !(isAuthenticated$ | async)"
+          class="login-error-section p-1 d-flex align-items-center"
+        >
+          <span class="small-text">Incorrect username or password</span>
+        </div>
+        <button 
+          [disabled]="loginForm.invalid"
+          type="submit"
+        >
+          LOG IN
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

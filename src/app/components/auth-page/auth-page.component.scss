@@ -1,0 +1,43 @@
+.auth-page-container {
+  p {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .login-section {
+    margin: 3rem 0 0;
+    width: 33%;
+    min-height: 25vh;
+    border: 0.1429rem solid whitesmoke;
+    border-radius: 0.5rem;
+    background: #2d5282;
+
+    form {
+      min-height: inherit;
+
+      div {
+        width: 100%;
+
+        label {
+          margin-bottom: 1rem;
+          span {
+            display: inline-block;
+            width: 10rem;
+            color: whitesmoke;
+          }
+        }
+
+        button {
+          width: 10rem;
+          margin: 3rem 0 0;
+        }
+
+        .login-error-section {
+          width: auto;
+          height: 1rem;
+          background: rgb(166, 22, 22);
+        }
+      }
+    }
+  }
+}

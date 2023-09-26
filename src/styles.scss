@@ -1,0 +1,135 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: whitesmoke;
+  background-color: #1B2F4B;
+}
+
+// font classes
+.small-text {
+  font-size: 1rem;
+}
+
+.medium-text {
+  font-size: 1.2rem;
+}
+
+.large-italic-text {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+// alignment classes
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+// padding classes
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+//margin classes
+.mr-10 {
+  margin-right: 0.7143rem;
+}
+
+.mt-10 {
+  margin-top: 0.7143rem;
+}
+
+.mb-10 {
+  margin-bottom: 0.7143rem;
+}
+
+// btn styling
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 0.25rem;
+  outline: 0.1429rem solid #0E1725;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #2d5282;
+  color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+}
+
+button:hover,
+button:focus {
+    background: #2e5182;
+}
+
+button:focus {
+    outline-offset: -0.2857rem;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+// input styling
+input {
+  background: inherit;
+  color: whitesmoke;
+  border: none;
+  height: 3rem;
+  outline: whitesmoke solid 0.1429rem;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 0 0 0.5rem;
+  border-radius: 0.35rem;
+}
+
+.red-outline {
+  outline: red solid 1px;
+}
